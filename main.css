@@ -3503,3 +3503,64 @@ section .hero {
   opacity: 1;
   transform: translateX(-50%) translateY(2px);
 }
+
+
+/* Portfolio navigation and gallery polish */
+.case-study-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.case-study-btn i { transition: transform 0.25s ease; }
+.case-study-btn:hover { color: color-mix(in srgb, var(--accent-color), #000 15%); }
+.case-study-btn:hover i { transform: translateX(4px); }
+.portfolio-card-link img,
+.gallery-card img { transition: transform 0.35s ease, filter 0.35s ease; }
+.portfolio-card-link:hover img,
+.gallery-card:hover img { transform: scale(1.015); }
+.gallery-expand { position: relative; display: block; overflow: hidden; }
+.gallery-overlay {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.gallery-expand:hover .gallery-overlay,
+.gallery-expand:focus-visible .gallery-overlay,
+.gallery-card:hover .gallery-overlay { opacity: 1; transform: translateY(0); }
+.gallery-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.gallery-pair img { height: 100%; object-fit: cover; }
+.back-to-case-studies {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.back-to-case-studies i { transition: transform 0.25s ease; }
+.back-to-case-studies:hover { color: color-mix(in srgb, var(--accent-color), #000 15%); }
+.back-to-case-studies:hover i { transform: translateX(-4px); }
+.digital-gallery-cta { margin-top: 2rem; text-align: center; }
+@media (max-width: 576px) { .gallery-pair { grid-template-columns: 1fr; } }
