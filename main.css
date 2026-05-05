@@ -2479,7 +2479,8 @@ section .hero {
 }
 
 .portfolio-details .visual-showcase .main-visual {
-  border-radius: 8px;
+  background: #f7fafc;
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -2487,10 +2488,27 @@ section .hero {
   height: auto !important;
 }
 
+.portfolio-details .visual-showcase .main-visual .swiper-slide {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7fafc;
+  padding: 24px;
+}
+
 .portfolio-details .visual-showcase .main-visual .swiper-slide img {
   width: 100%;
-  height: 600px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 768px) {
+  .portfolio-details .visual-showcase .main-visual .swiper-slide {
+    height: 320px;
+    padding: 12px;
+  }
 }
 
 .portfolio-details .visual-showcase .main-visual .swiper-button-next,
